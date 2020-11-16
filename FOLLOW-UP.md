@@ -11,6 +11,7 @@ I build the frontend with ReactJS and add the following libraries:
 
 ```
 git clone git@github.com:rafaelgtraverso/full-stack-challenge.git
+cd full-stack-challenge
 cd frontend
 ```
 #### With yarn
