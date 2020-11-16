@@ -9,10 +9,12 @@ I build the frontend with ReactJS and add the following libraries:
 
 ### Q) What's the command to start the frontend application locally?
 
-clone
+`
+git clone git@github.com:rafaelgtraverso/full-stack-challenge.git
 cd frontend
 yarn install or npm install
 yarn start or npm start
+`
 
 ### Q) What libraries did you add to the backend? What are they used for?
 
@@ -24,21 +26,20 @@ I use express as framework with the following libraries:
 
 ### Q) What's the command to start the backend application locally?
 
-From the directory where you clone the project:
+From the directory where you cloned the project:
 
-$ cd backend
-$ yarn install
+`$ cd backend
+$ yarn install`
 or
-$ npm install
-$ yarn run dev
+`$ npm install
+$ yarn run dev`
 
 Then open a browser and copy the following links ( you can change the amount value):
-
+`
 Task 1: http://localhost:4000/exchange-routing?amount=1
 Task 2: http://localhost:4000/compare-exchanges?amount=1
 Task 3: http://localhost:4000/compare-exchanges2?amount=1
-
-
+`
 ---
 
 # General:
