@@ -1,1 +1,1 @@
-Go to FOLLO-UP.md
+Instruction in FOLLOW-UP.md
