@@ -12,8 +12,16 @@ I build the frontend with ReactJS and add the following libraries:
 ```
 git clone git@github.com:rafaelgtraverso/full-stack-challenge.git
 cd frontend
-yarn install or npm install
-yarn start or npm start
+```
+#### With yarn
+```
+yarn install
+yarn start
+```
+#### With npm
+```
+npm install
+npm start
 ```
 
 ### Q) What libraries did you add to the backend? What are they used for?
@@ -29,12 +37,16 @@ I use express as framework with the following libraries:
 From the directory where you cloned the project:
 ```
 $ cd backend
-$ yarn install
 ```
-or
+#### With yarn
+```
+$ yarn install
+$ yarn run dev
+```
+#### With npm
 ```
 $ npm install \n
-$ yarn run dev
+$ npm run dev
 ```
 
 Then open a browser and copy the following links ( you can change the amount value):
