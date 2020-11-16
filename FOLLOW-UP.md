@@ -28,10 +28,10 @@ I use express as framework with the following libraries:
 
 From the directory where you cloned the project:
 
-`$ cd backend
+`$ cd backend \n
 $ yarn install`
 or
-`$ npm install
+`$ npm install \n
 $ yarn run dev`
 
 Then open a browser and copy the following links ( you can change the amount value):
