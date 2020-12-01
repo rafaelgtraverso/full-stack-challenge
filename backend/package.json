@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon server.js"
   },
-  "author": "",
+  "author": "Rafael G Traverso",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.0",

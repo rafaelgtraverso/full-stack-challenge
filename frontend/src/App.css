@@ -1,40 +1,43 @@
 .App-Container {
-  background-color: #282c349d;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c346c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
-.Toggles-Container{
-  background-color: gray;
-  flex-direction: row;
+.Toggles-Container {
+    background-color: gray;
+    flex-direction: row;
 }
 
-.Toggles-Text{
-  color: white;
+.Toggles-Text {
+    color: white;
 }
 
-.List-Desktop {
-  background-color: #44a2bd5e;
-  column-count:3;
-  align-items: center;
-  justify-content: center;
+.List {
+    background-color: #44a2bd5e;
+    column-count: 1;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (min-width: 600px) {
+    .List {
+        background-color: #44a2bd5e;
+        column-count: 2;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.List-Tablet{
-  background-color: #44a2bd5e;
-  column-count:2;
-  align-items: center;
-  justify-content: center;
-}
-
-.List-Mobile {
-  background-color: #44a2bd5e;
-  column-count:1;
-  align-items: center;
-  justify-content: center;
+@media screen and (min-width: 768px) {
+    .List {
+        background-color: #44a2bd5e;
+        column-count: 3;
+        align-items: center;
+        justify-content: center;
+    }
 }

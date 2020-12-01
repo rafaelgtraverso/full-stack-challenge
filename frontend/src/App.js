@@ -23,8 +23,8 @@ function App(props) {
 
 
   const [checkedState, setCheckedState]=useState({
-    checkedA: true,
-    checkedB: true,
+    filterNotSupportedInUs: true,
+    filterNotAvailablesinTestMode: true,
     sortBy:'shuffle',
   });
 
@@ -35,23 +35,29 @@ function App(props) {
   const handleClick = (button) =>{
     setCheckedState({ ...checkedState, sortBy: button })
   }
-  const renderItems = () => {
-    const {checkedA, checkedB, sortBy} =checkedState;
-    let dataToRender = [];
 
-    if(checkedA && checkedB) {
-      dataToRender=_.sortBy(_.filter(data,{type: 'crypto'}),[sortBy])
-    }else if(!checkedA && checkedB){
-      dataToRender=_.sortBy(_.filter(data,{isSupportedInUS:true}),[sortBy])
-    }else if(checkedA && !checkedB){
-      dataToRender=_.sortBy(_.filter(data,{supportsTestMode:true}),[sortBy])
-    }else if(!checkedA && !checkedB){
-      dataToRender=_.sortBy(_.filter(data,{supportsTestMode:true, isSupportedInUS:true}),[sortBy])
+  const dataFiltered = () => {
+    const {filterNotSupportedInUs, filterNotAvailablesinTestMode} = checkedState;
+
+    switch (filterNotAvailablesinTestMode && filterNotSupportedInUs){
+      case (false && true):
+        return _.filter(data,{type: 'crypto',isSupportedInUS:true})
+      case (true & false):
+        return _.filter(data,{supportsTestMode:true});
+      case (false && false):
+        return _.filter(data,{supportsTestMode:true, isSupportedInUS:true});
+      default:
+        return _.filter(data,{type: 'crypto'})
     }
+  }
+
+  const renderItems = () => {
+    const {sortBy} = checkedState;
+
     if(sortBy==='shuffle'){
-      return <Items data={_.shuffle(dataToRender)} />
+      return <Items data={_.shuffle(dataFiltered())} />
     }else{
-      return <Items data={_.sortBy(dataToRender,[sortBy])} />
+      return <Items data={_.sortBy(dataFiltered(),[sortBy])} />
     }
   }
 
@@ -62,8 +68,8 @@ function App(props) {
         <FormControlLabel
           control={
             <Checkbox
-              checked={checkedState.checkedA}
-              name="checkedA"
+              checked={checkedState.filterNotSupportedInUs}
+              name="filterNotSupportedInUs"
               onChange={handleChange}
               color="primary"
             />
@@ -73,8 +79,8 @@ function App(props) {
         <FormControlLabel
           control={
             <Checkbox
-              checked={checkedState.checkedB}
-              name="checkedB"
+              checked={checkedState.filterNotAvailablesinTestMode}
+              name="filterNotAvailablesinTestMode"
               onChange={handleChange}
               color="primary"
             />
@@ -112,7 +118,7 @@ function App(props) {
           Shuffle
         </Button>
       </FormGroup>
-      <List className={isMobileOnly ? "List-Mobile" : isTablet ? "List-Tablet" : "List-Desktop"} >
+      <List className="List" >
         {renderItems()}
       </List>
     </Container>
